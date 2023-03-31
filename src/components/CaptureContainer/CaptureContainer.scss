@@ -1,4 +1,8 @@
 .capture-container {
+  display: flex;
+  flex-flow: column;
+  padding: 0.5rem;
+  
   &__button {
     width: 100px;
     margin-left: 5px;

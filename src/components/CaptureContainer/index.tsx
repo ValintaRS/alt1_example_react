@@ -54,7 +54,7 @@ export const CaptureContainer = () => {
   }
 
   return (
-    <div>
+    <div className="capture-container">
       {errorText && (
         <p>{errorText}</p>
       )}
