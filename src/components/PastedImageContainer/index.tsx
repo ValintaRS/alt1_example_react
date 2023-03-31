@@ -3,30 +3,23 @@ import * as a1lib from "@alt1/base";
 import { ImgRef } from "@alt1/base";
 import { useState } from "react";
 import { CapturedImage } from "../CapturedImage";
-import "./CaptureContainer.scss";
+import "./PastedImageContainer.scss";
 
 const imgs = a1lib.ImageDetect.webpackImages({
 	homeport: require("../../../public/homebutton.data.png")
 });
 
-export const CaptureContainer = () => {
-  const [errorText, setErrorText] = useState<string>("");
-  const [homeportText, setHomeportText] = useState<string>('-');
+export const PastedImageContainer = () => {
+  const [errorText, setErrorText] = useState(null);
+  const [homeportText, setHomeportText] = useState('-');
   const [imgSrc, setImgSrc] = useState<string>("");
 
-  const capture = () => {
-    if (!window.alt1) {
-      setErrorText("You need to run this page in alt1 to capture the screen");
-      return;
-    }
-    if (!alt1.permissionPixel) {
-      setErrorText("Page is not installed as app or capture permission is not enabled");
-      return;
-    }
-    const img = a1lib.captureHoldFullRs();
+  a1lib.PasteInput.listen(img => {
     findHomeport(img);
-  }
-
+  }, (err, errid) => {
+    setErrorText(`${errid} ${err}`);
+  });
+  
   const findHomeport = (img: ImgRef) => {
     const loc = img.findSubimage(imgs.homeport);
     setHomeportText(`${JSON.stringify(loc)}`);
@@ -42,7 +35,7 @@ export const CaptureContainer = () => {
     //get raw pixels of image and show on screen (used mostly for debug)
     const width = 200;
     const height = 200;
-    const buf = img.toData(100, 100, width, height);
+    const buf = img.toData(0, 0, width, height);
 
     const tempCanvas = document.createElement("canvas");
     const tempCtx = tempCanvas.getContext("2d");
@@ -54,19 +47,16 @@ export const CaptureContainer = () => {
   }
 
   return (
-    <div className="capture-container">
+    <div className="pasted-image-container">
       {errorText && (
         <p>{errorText}</p>
       )}
       <p>
-        Homeport matches: {homeportText}
+        Homeport from image: {homeportText}
       </p>
-      <button
-        className="capture-container__button"
-        onClick={() => capture()}
-      >
-        Capture
-      </button>
+      <p>
+        Paste an image from clipboard with ctrl+v. Homeport button will be detected (or not).
+      </p>
       <p>
         The captured image will appear here
       </p>
