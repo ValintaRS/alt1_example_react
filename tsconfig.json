@@ -1,6 +1,5 @@
 {
 	"compilerOptions": {
-		"jsx": "react",
 		"moduleResolution": "Node"
 	},
 	"allowTsInNodeModules": true

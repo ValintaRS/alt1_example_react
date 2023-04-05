@@ -44,6 +44,7 @@ export function capture() {
 function findHomeport(img: ImgRef) {
 	var loc = img.findSubimage(imgs.homeport);
 	output.insertAdjacentHTML("beforeend", `<div>homeport matches: ${JSON.stringify(loc)}</div>`);
+
 	//overlay the result on screen if running in alt1
 	if (window.alt1) {
 		if (loc.length != 0) {
