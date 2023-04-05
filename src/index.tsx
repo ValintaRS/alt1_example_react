@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.scss'
 
-// tell webpack to add index.html and appconfig.json to output
+//tell webpack to add index.html and appconfig.json to output
 require("!file-loader?name=[name].[ext]!./index.html");
 require("!file-loader?name=[name].[ext]!./appconfig.json");
 
