@@ -1,5 +1,7 @@
 # Minimal Alt1/webpack/typescript/React example
 
+Copy and paste this link into web browser: `alt1://addapp/https://valintars.github.io/alt1_example_react/appconfig.json`
+
 ```sh
 #to initialize the repo and install dependencies
 npm i
