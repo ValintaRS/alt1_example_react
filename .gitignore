@@ -1,2 +1,4 @@
 node_modules
+dist/appconfig.json
+dist/index.html
 package-lock.json
