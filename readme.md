@@ -11,4 +11,4 @@ npm run build
 npm run watch
 ```
 
-After building open `./dist/index.html` in your alt1 browser and click the `add app`. 
+After building open `./dist/index.html` in your alt1 browser and click the `add app`.

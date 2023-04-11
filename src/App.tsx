@@ -1,7 +1,6 @@
-
-import * as React from "react";
-import { CaptureContainer } from "./components/CaptureContainer";
-import { PastedImageContainer } from "./components/PastedImageContainer";
+import * as React from 'react';
+import { CaptureContainer } from './components/CaptureContainer';
+import { PastedImageContainer } from './components/PastedImageContainer';
 
 const App = () => {
   return (
@@ -10,7 +9,7 @@ const App = () => {
       <div className="nisseperator relative"></div>
       <PastedImageContainer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
