@@ -1,8 +1,12 @@
 import * as React from "react";
 import "./CapturedImage.scss";
 
+interface CapturedImageProps {
+  src: string
+}
+
 export const CapturedImage = (
-  {src}:{src: string}
+  {src}: CapturedImageProps
 ) => (
   <div className="captured-image">
     {src && (

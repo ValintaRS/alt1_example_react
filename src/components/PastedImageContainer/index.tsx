@@ -6,9 +6,9 @@ import "./PastedImageContainer.scss";
 import { findHomeport } from "../../utils/homeport";
 
 export const PastedImageContainer = () => {
-  const [errorText, setErrorText] = useState<string>("");
-  const [homeportText, setHomeportText] = useState<string>('-');
-  const [imgSrc, setImgSrc] = useState<string>("");
+  const [errorText, setErrorText] = useState("");
+  const [homeportText, setHomeportText] = useState('-');
+  const [imgSrc, setImgSrc] = useState("");
 
   a1lib.PasteInput.listen(img => {
     const {homeportText, imgSrc} = findHomeport(img);
