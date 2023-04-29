@@ -19,3 +19,4 @@ config.entry('index', './index.tsx');
 config.output(outdir);
 
 export default config.toConfig();
+
