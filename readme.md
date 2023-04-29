@@ -1,6 +1,7 @@
-# Minimal Alt1/webpack/typescript example
+# Minimal Alt1/webpack/typescript/React example
 
-how to use
+Copy and paste this link into web browser: `alt1://addapp/https://valintars.github.io/alt1_example_react/dist/appconfig.json`
+
 ```sh
 #to initialize the repo and install dependencies
 npm i
@@ -10,6 +11,4 @@ npm run build
 npm run watch
 ```
 
-You can open `./dist/index.html` in your browser and it will give some basic functionality based one pasted images.
-
-You can also open it in the Alt1 browser and click the `add app` button that appears to get some basic alt1 functionality.
+After building open `./dist/index.html` in your alt1 browser and click the `add app`.

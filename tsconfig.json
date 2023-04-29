@@ -1,6 +1,7 @@
 {
-	"compilerOptions": {
-		"moduleResolution": "Node"
-	},
-	"allowTsInNodeModules": true
+  "compilerOptions": {
+    "jsx": "react",
+    "moduleResolution": "Node"
+  },
+  "allowTsInNodeModules": true
 }
